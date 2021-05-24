@@ -17,8 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     QSqlDatabase db;
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("L:/Projects/TextAnalizator/analizatorDB2.db");
-//    db.setDatabaseName("L:/Projects/Project_Qt1/Qt_db.db");
+//    db.setDatabaseName("L:/Projects/TextAnalizator/build/debug/localDB/analizatorDB2.db");
+    db.setDatabaseName("L:/Projects/Project_Qt1/Qt_db.db");
     db.setUserName("root");
 
     if (!db.open()) {
@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "Success";
     }
 
-    dir.setPath("L:/Projects/TextAnalizator/scripts");
+    dir.setPath("L:/Projects/TextAnalizator/build/debug/Scripts");
 //    dir.setPath("L:/Projects/Project_Qt1");
     dir.setNameFilters(filters);
     list = dir.entryInfoList(QDir::Files,QDir::Name);
